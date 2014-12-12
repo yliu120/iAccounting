@@ -3,14 +3,13 @@ package edu.jhu.cs.cs475.finalproject.model;
 import java.io.Serializable;
 import java.util.HashMap;
 
-
-class FeatureVector implements Serializable {
+public class FeatureVector implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private HashMap<Integer, Double> vector;
 	private int largestKey = 0;
 	
-	FeatureVector() {
+	public FeatureVector() {
 		vector = new HashMap<Integer, Double>();
 	}
 
