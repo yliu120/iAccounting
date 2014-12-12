@@ -26,6 +26,7 @@ public class ReadImageToFeatureFile {
 	 */
 	private String dataFolderName;
 	private File dataFolder;
+	private int size = 100;
 
 	/**
 	 * Constructor for testing
@@ -50,6 +51,14 @@ public class ReadImageToFeatureFile {
 		this.dataFolder = new File(this.dataFolderName);
 		this.dataFile = new File(this.dataFileName);
 	}
+	
+	public ReadImageToFeatureFile(String dataFileName, String dataFolder, int size){
+		this.dataFileName = dataFileName;
+		this.dataFolderName = dataFolder;
+		this.dataFolder = new File(this.dataFolderName);
+		this.dataFile = new File(this.dataFileName);
+		this.size = size;
+	}
 
 	public void writeDataFile() throws IOException {
 
@@ -67,7 +76,7 @@ public class ReadImageToFeatureFile {
 				}
 				String[] exampleName = (new File(path)).list();
 
-				for (int i = 0; i < 100; i++) {
+				for (int i = 0; i < size; i++) {
 
 					if (exampleName[i].contains("img")) {
 						/* Here we deal with each example */
