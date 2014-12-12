@@ -80,7 +80,7 @@ public class ReadImageToFeatureFile {
 						// For our data set the png image is 128 * 128;
 						String featureString = this
 								.featureStringConstruction(ExtractFeature
-										.extractInt(ImageReader
+										.extractIntBinary(ImageReader
 												.readGreyImage(exampleImage)));
 						
 						output.write( realLabel + " " + featureString );
@@ -122,7 +122,7 @@ public class ReadImageToFeatureFile {
 		for (int i = 0; i < featureVector.length; i++) {
 			if (featureVector[i] != 0) {
 				vector += (i + 1);
-				vector += ":1 ";
+				vector += ":" + featureVector[i] + " ";
 			}
 		}
 		int lastIndex = vector.length() - 1;
